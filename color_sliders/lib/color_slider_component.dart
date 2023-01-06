@@ -6,12 +6,14 @@ class ColorSlider extends StatelessWidget {
   final String title;
   final double value;
   final Color color;
+  final Function onChange;
 
   const ColorSlider({
     super.key,
     required this.title,
     required this.value,
     required this.color,
+    required this.onChange,
   });
 
   @override
@@ -31,17 +33,19 @@ class ColorSlider extends StatelessWidget {
                 style: const TextStyle(fontSize: 20.0),
               ),
               Text(
-                "$value",
+                value.toStringAsFixed(3),
                 style: const TextStyle(fontSize: 20.0),
               ),
             ],
           ),
           Slider(
             value: value,
+            // divisions: 1000,
             thumbColor: color,
             activeColor: color,
             onChanged: (newValue) {
-              print("TODO: Tell the state about this new value $newValue");
+              // print("TODO: Tell the state about this new value $newValue");
+              onChange(newValue);
             },
           )
         ],
