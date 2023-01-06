@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.color_sliders">
+    package="edu.rose_hulman.fisherds.color_sliders">
    <application
         android:label="color_sliders"
         android:name="${applicationName}"
